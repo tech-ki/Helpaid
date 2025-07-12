@@ -1,0 +1,101 @@
+header,p,content,h1,h2,h3,h4,h5,h6,h7,input,#video-title.ytd-rich-grid-media,li,ol,span,table,tl,tr,th,* {
+    font-family:"Nunito" !important;
+}
+code,.w3-code, .w3-codespan{
+    font-family:"Comic Code" !important;
+color: #2367f9;
+}
+
+strong,b,h2 {
+    color: #2367f9;
+}
+
+h1,em {
+    color: #ff0967;
+}
+
+h3 {
+    color: #d94ff9;
+}
+
+h4 {
+    color: #1ec03f;
+}
+
+h5 {
+    color: #ffe602;
+}
+
+h6 {
+    color: #dd8807;
+}
+
+p {
+    line-height: 2 !important; 
+
+}
+
+body {
+    background-color: #F9F0F8;
+}
+
+/*To do app*/
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  li button {
+    font-size: 12px;
+    margin-left: 20px;
+    color: #ffffff;
+    background-color: rgb(220, 20, 87);
+    border-radius: 5px;
+    float: right;
+  }
+
+  .mystyle {
+    /* width: 50%; */
+    padding: 1px;
+    background-color: rgb(80, 255, 109) !important;
+    color: rgb(92, 61, 61) !important;
+    border-radius: 5px;
+  }
+
+  .area {
+    /* width: 50%; */
+    padding: 5px;
+    background-color: rgb(255, 80, 103);
+    border-radius: 5px;
+    list-style-type: none; /* Remove bullets */
+    margin-left: -25px;
+    font-weight: bold;
+  }
+
+  .step {
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 25px;
+    background-color: rgba(255, 80, 103, 0.055);
+    color: #ff093e;
+  }
+
+  #container {
+   display: flex; 
+   position: relative;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   display: grid;
+   justify-items: center;
+  }
+
+   #main {
+    /*min-width: 500px;*/
+    max-width: 600px;
+    border: 1px solid #9b9494;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px; 
+  } 
