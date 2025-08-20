@@ -7,18 +7,27 @@ var todos = [];
 const list = document.querySelector('ul');
 const input = document.querySelector('input');
 const button = document.querySelector('button');
+const buttona = document.querySelector('todo-area');
+const buttond = document.querySelector('todo-ok');
+
+
+
+document.addEventListener("click", function() {
+  document.getElementById("todo-area").innerHTML = "Hello World!";
+  row.querySelector(".todo-item").classList.toggle("todo-area"); 
+});
+
 
 button.addEventListener('click', () => { //add
   const myItem = input.value;
   input.value = '';
 
-
   const listItem = document.createElement('li');
   const listText = document.createElement('span');
   const listBtn = document.createElement('button');
   const listBtnD = document.createElement('button');
-  const listBtnA= document.createElement('button');  
-  const listBtnS= document.createElement('button');
+  const listBtnA = document.getElementById("todo-area");
+  const listBtnS = document.createElement('button');
 
   listItem.appendChild(listText);
   listText.textContent = myItem;
@@ -49,7 +58,7 @@ button.addEventListener('click', () => { //add
     });
 
     listBtnA.addEventListener('click', () => { //done
-      listItem.classList.toggle("area");
+      listItem.classList.toggle("todo-area");
     });
   
     listBtnS.addEventListener('click', () => { //done
@@ -61,6 +70,8 @@ button.addEventListener('click', () => { //add
 });
 
 const listItems = document.querySelectorAll("li"); //works
+
+
 
 // Store a reference to the <h1> in a variable
 const myHeading = document.querySelector("h1");
@@ -85,7 +96,11 @@ function myFunction() {
   element.classList.toggle("mystyle");
 }
 
+ myHeading.textContent = "Finished!";
+
+
 //upgrade
+
 var todo = {
   // (A) INITIALIZE TO DO LIST
   data : [],        // todo list data array
@@ -100,17 +115,17 @@ var todo = {
     todo.data = JSON.parse(localStorage.todo);
 
     // (A3) GET HTML ELEMENTS
+    todo.hArea= document.getElementById("todo-area");
     todo.hAdd = document.getElementById("todo-item");
     todo.hTemplate = document.getElementById("todo-template").content;
     todo.hList = document.getElementById("todo-list");
 
     // (A4) "ENABLE" ADD ITEM FORM
     document.getElementById("todo-add").onsubmit = todo.add;
-
     // (A5) DRAW TO DO LIST
     todo.draw();
   },
-
+  
   // (B) DRAW TO DO LIST
   draw : () => {
     // (B1) RESET LIST
@@ -121,13 +136,25 @@ var todo = {
       let row = todo.hTemplate.cloneNode(true),
           edit = row.querySelector(".todo-edit"),
           item = row.querySelector(".todo-item");
+          area = row.querySelector(".todo-area");
+
       item.value = todo.data[id][0];
       item.id = "item" + id;
       edit.id = "edit" + id;
+      area.id = "area" + id;
+      area.onclick = () => todo.edit(id);
       edit.onclick = () => todo.edit(id);
       row.querySelector(".todo-done").onclick = () => todo.toggle(id);
       row.querySelector(".todo-del").onclick = () => todo.del(id);
-      if (todo.data[id][1]) { row.querySelector(".todo-item").classList.add("todo-ok"); }
+      row.querySelector(".todo-area").onclick = () => todo.toggle(id); 
+      row.querySelector(".todo-edit").onclick = () => todo.toggle(id); 
+
+      if (todo.data[id][1]) { 
+        row.querySelector(".todo-item").classList.toggle("todo-ok"); 
+      }
+        /* if (todo.data[id][1] = 4) { 
+        row.querySelector(".todo-item").classList.toggle("todo-area"); 
+      } */
       todo.hList.appendChild(row);
     }}
   },
@@ -151,6 +178,7 @@ var todo = {
     // (E1) GET EDIT BUTTON + ITEM
     let edit = document.getElementById("edit" + id),
         item = document.getElementById("item" + id);
+         area = document.getElementById("area" + id);
 
     // (E2) SET EDITABLE
     if (item.disabled) {
@@ -177,11 +205,36 @@ var todo = {
   },
 
   // (G) DELETE ITEM
-  del: id => { if (confirm("Delete task?")) {
+  del: id => { /* if (confirm("Delete task?")) { */
     todo.data.splice(id, 1);
     todo.save();
-  }}
+  }
 };
 
 // (H) PAGE INIT
 window.addEventListener("load", todo.init);
+
+lvl = 4;
+// change html element
+document.getElementById("lvl").innerHTML = lvl+2;
+/* document.getElementsByClassName("lvl").innerHTML = lvl; */
+
+// when button
+document.getElementById("mylvl").addEventListener("click", function() {
+  document.getElementById("lvl").innerHTML = lvl+=1;
+});
+
+/*
+let numb = document.getElementsByClassName("lvl");
+document.getElementById("lvl").innerHTML = lvl+=1; */
+
+const buttons = document.querySelectorAll('.lvls'); 
+// Selects all elements with the class "my-button"
+
+buttons.forEach(button => {
+  lvl = 2;
+  button.addEventListener('click', () => {
+    document.getElementsByClassName("one").innerHTML = lvl+1;
+    document.getElementById("lvl").innerHTML = lvl+=8;
+  });
+});
