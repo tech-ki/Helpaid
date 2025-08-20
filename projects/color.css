@@ -15,7 +15,130 @@ h1,em {
 }
 
 h3 {
-    color: #d94ff9;
+    color: #4f28fd;
+    background-color: #f1e2f0;
+    padding-left: 10px;
+    padding-top: 3px;
+    border-radius: 8px;
+    padding-bottom: 4px;
+    padding: 4px 4 4 20;
+}
+
+.flex {
+  display: flex;
+  background-color: DodgerBlue;
+  border-radius: 8px;
+}
+
+.flex > div {
+  background-color: #fff8ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 20px;
+  width: 220px;
+}
+
+.flex > div > p {
+    background-color: #f8f1f8;
+    border: #21242c;
+    border-width: 2px;
+    border-radius: 8px;
+    border-style: solid; 
+    padding-left: 20px;
+}
+
+#log {
+    border: #060e1f;
+    border-style: solid;
+}
+
+#details {
+    
+    width: 400px;
+    border: #060e1f;
+    border-style: solid;
+}
+
+#details > p {
+    background-color: #d2ffe0;
+    padding-top: 20;
+    height: 300px;
+}
+
+#details > string {
+    line-height: 2;
+
+}
+
+
+h3#doing:before{
+    display: inline-flex;
+    content: "";
+    width: 30px;
+    height: 25px;
+    background: transparent 
+    url('./quiz/image/24/006-processing-time.png') 
+    no-repeat;
+}
+
+h3#doing:before{
+    display: inline-flex;
+    content: "";
+    width: 30px;
+    height: 25px;
+    padding-inline: 2px;
+    padding: auto;
+    background: transparent 
+    url('./quiz/image/24/001-schedule.png') 
+    no-repeat;
+}
+
+h3#done:before{
+    display: inline-flex;
+    content: "";
+    width: 30px;
+    height: 25px;
+    padding-inline: 2px;
+    padding: auto;
+    background: transparent 
+    url('./quiz/image/24/004-check.png') 
+    no-repeat;
+}
+
+h3#open:before{
+    display: inline-flex;
+    content: "";
+    width: 30px;
+    height: 25px;
+    padding-inline: 2px;
+    padding: auto;
+    background: transparent 
+    url('./quiz/image/24/lamp\(1\).png') 
+    no-repeat;
+}
+
+h3#next:before{
+    display: inline-flex;
+    content: "";
+    width: 30px;
+    height: 25px;
+    padding-inline: 2px;
+    padding: auto;
+    background: transparent 
+    url('./quiz/image/24/002-bookmark.png') 
+    no-repeat;
+}
+
+h3#done2:before{
+    display: inline-flex;
+    content: "";
+    width: 30px;
+    height: 25px;
+    padding-inline: 2px;
+    padding: auto;
+    background: transparent 
+    url('./quiz/image/gold-star\(inf-sm\).gif') 
+    no-repeat;
 }
 
 h4 {
@@ -93,7 +216,7 @@ body {
 
    #main {
     /*min-width: 500px;*/
-    max-width: 600px;
+   /* max-width: 600px;*/
     border: 1px solid #9b9494;
     border-radius: 5px;
     padding-left: 10px;
@@ -140,4 +263,5 @@ body {
 #todo-save, .todo-del, .todo-edit, .todo-done {
   cursor: pointer;
 }
+
 
