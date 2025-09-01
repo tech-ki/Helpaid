@@ -14,28 +14,38 @@ h1,em {
     color: #ff0967;
 }
 
-h3 {
+button, h3 {
     color: #4f28fd;
     background-color: #f1e2f0;
     padding-left: 10px;
     padding-top: 3px;
     border-radius: 8px;
     padding-bottom: 4px;
-    padding: 4px 4 4 20;
+   
 }
 
+/*button {
+    border: none;
+    font-size: 20px;
+    display: inline-flex;
+   font-weight: 700;
+    margin-bottom: 20px;
+    padding-right: 30px;
+    word-wrap:normal;
+} */
+
 .flex {
-  display: flex;
+  display: flex; 
   background-color: DodgerBlue;
   border-radius: 8px;
 }
 
-.flex > div {
+.flex > div { /*left area*/
   background-color: #fff8ff;
   padding: 20px;
   border-radius: 8px;
   margin: 20px 20px;
-  width: 220px;
+  width: 300px;
 }
 
 .flex > div > p {
@@ -47,9 +57,33 @@ h3 {
     padding-left: 20px;
 }
 
+h3.active {
+    background-color: #ffef0cce !important;
+    border: #21242c solid;
+    border-width: 2px;
+}
+
+.flex > div > h3 {
+    background-color: #eedfe2;
+}
+
+
+h3.done {
+    background-color: #0cff8e !important;
+}
+/*
+h3.next {
+    background-color: #ff0cc28f !important;
+}
+
+h3.open {
+    background-color: #0cefff69 !important;
+} */
+
 #log {
     border: #060e1f;
     border-style: solid;
+    width: 300px;
 }
 
 #details {
@@ -57,13 +91,48 @@ h3 {
     width: 400px;
     border: #060e1f;
     border-style: solid;
+    width: 500px;
+
 }
 
 #details > p {
-    background-color: #d2ffe0;
+    background-color: #ffeffc;
     padding-top: 20;
-    height: 300px;
+   height: 400px;
+
+     height: 300px;
+            overflow: auto;
+            border: #060e1f 2px solid;
+            padding: 10px;
+    
+  scrollbar-color: rgb(0, 132, 255) rgb(224, 220, 223) ;
+  scrollbar-width: 20px;  
+  scroll-padding-block: 20px; 
+  scroll-behavior: smooth;
 }
+
+/* Customize the entire scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+/* Customize the scrollbar track (the background) */
+::-webkit-scrollbar-track {
+  background: #d2f6ff; /* Light gray track */
+  border-radius: 5px; /* Optional: Rounded corners for the track */
+}
+
+/* Customize the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #0089e4; /* Dark gray thumb */
+  border-radius: 3px; /* For rounded ends, or a larger value for more circular appearance */
+}
+
+/* Optional: Change thumb color on hover 
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}*/
+
 
 #details > string {
     line-height: 2;
@@ -71,17 +140,17 @@ h3 {
 }
 
 
-h3#doing:before{
+h3.doing:before{
     display: inline-flex;
     content: "";
     width: 30px;
     height: 25px;
     background: transparent 
-    url('./quiz/image/24/006-processing-time.png') 
+    url('./quest/image/24/006-processing-time.png') 
     no-repeat;
 }
 
-h3#doing:before{
+.later:before{
     display: inline-flex;
     content: "";
     width: 30px;
@@ -89,11 +158,11 @@ h3#doing:before{
     padding-inline: 2px;
     padding: auto;
     background: transparent 
-    url('./quiz/image/24/001-schedule.png') 
+    url('./quest/image/24/001-schedule.png') 
     no-repeat;
 }
 
-h3#done:before{
+.done:before{
     display: inline-flex;
     content: "";
     width: 30px;
@@ -101,11 +170,11 @@ h3#done:before{
     padding-inline: 2px;
     padding: auto;
     background: transparent 
-    url('./quiz/image/24/004-check.png') 
+    url('./quest/image/24/004-check.png') 
     no-repeat;
 }
 
-h3#open:before{
+.open:before{
     display: inline-flex;
     content: "";
     width: 30px;
@@ -113,11 +182,11 @@ h3#open:before{
     padding-inline: 2px;
     padding: auto;
     background: transparent 
-    url('./quiz/image/24/lamp\(1\).png') 
+    url('./quest/image/24/lamp\(1\).png') 
     no-repeat;
 }
 
-h3#next:before{
+.next:before{
     display: inline-flex;
     content: "";
     width: 30px;
@@ -125,11 +194,11 @@ h3#next:before{
     padding-inline: 2px;
     padding: auto;
     background: transparent 
-    url('./quiz/image/24/002-bookmark.png') 
+    url('./quest/image/24/002-bookmark.png') 
     no-repeat;
 }
 
-h3#done2:before{
+.sort:before{
     display: inline-flex;
     content: "";
     width: 30px;
@@ -137,7 +206,31 @@ h3#done2:before{
     padding-inline: 2px;
     padding: auto;
     background: transparent 
-    url('./quiz/image/gold-star\(inf-sm\).gif') 
+    url('./quest/image/24/filter.png') 
+    no-repeat;
+}
+
+.new:before{
+    display: inline-flex;
+    content: "";
+    width: 30px;
+    height: 25px;
+    padding-inline: 2px;
+    padding: auto;
+    background: transparent 
+    url('./quest/image/24/folder.png') 
+    no-repeat;
+}
+
+.done2:before{
+    display: inline-flex;
+    content: "";
+    width: 30px;
+    height: 25px;
+    padding-inline: 2px;
+    padding: auto;
+    background: transparent 
+    url('./quest/image/gold-star\(inf-sm\).gif') 
     no-repeat;
 }
 
@@ -190,7 +283,7 @@ body {
     padding: 5px;
     background-color: rgb(255, 80, 103);
     border-radius: 5px;
-    list-style-type: none; /* Remove bullets */
+    /* list-style-type: none; Remove bullets */
     margin-left: -25px;
     font-weight: bold;
   }
@@ -210,7 +303,7 @@ body {
    padding-right: 20px;
    padding-top: 10px;
    padding-bottom: 10px;
-   display: grid;
+    display: grid; 
    justify-items: center;
   }
 
@@ -221,6 +314,8 @@ body {
     border-radius: 5px;
     padding-left: 10px;
     padding-right: 10px; 
+
+       
   } 
 
   /*new*/
@@ -264,4 +359,18 @@ body {
   cursor: pointer;
 }
 
+h3.done2 {
+ background-color: #ffdb0cce !important;    
+  /* background-color: #ffdb0cce !important;    */
+  border: #060e1f 2px solid;
+}
 
+.do {
+    flex-wrap: nowrap;
+    padding-left: 20px;
+}
+
+button {
+    padding-right: 10px;
+    margin-right: 10px;
+}
