@@ -3,8 +3,9 @@
 let m = "";
 let o = "";
   const dataArray = [
-        { id: 0, class: "done2", name: "Create a To Do", description: "Make this Quest , To Do app work! <h2>Rewards </h2><p>+50 experience" },
-        { id: 1,  class: "done", name: "Item A", description: "Description for Item A" },
+        { id: 0, class: "done2", exp: 20 ,name: "Create a To Do", description: ["Make this Quest , To Do app work!"
+          ,"<h2 class='done2'>Steps</h2><ol><li class='step done'>Create 2 panels </li><li class='step done'>Generate list from array </li><li class='step done'>Add class icons </li><li class='step done2 done'>On click show details loop </li></li><li class='step'>Add class icons </li><li class='step '>Add class icons </li><li class='step '>Add class icons </li></ol><h2 class='open'>Stones </h2><ul><li class='step done'>Add steps </li><li class='step later'>Make Change class buttons work with js </li><li class='step later'>Create new quest button </li><li class='step later'>Sort and filter quests button </li></ul><h2 class='done2'>Rewards </h2><p>+50 experience"] },
+        { id: 1,  class: "done", exp: 20 , name: "Item A", description: "Description for Item A" },
         { id: 2,  class: "open", name: "Item B", description: "Description for Item B" },
         { id: 3,  class: "next", name: "Item C", description: "Description for Item C" },
         { id: 4,  class: "open", name: "Item D", description: "Description for Item C" },
@@ -32,7 +33,7 @@ let o = "";
     //working quests list
     for (let i in dataArray) {
       let g = i;
-    o += "<h3 data-id="+g+" class='"+dataArray[i].class+"'>" + dataArray[i].name +"</h3>";
+    o += "<h3 data-id="+g+" class='"+dataArray[i].class+"'>" + dataArray[i].name+"</h3>";
 }
 
 
@@ -54,7 +55,8 @@ let o = "";
           
               // Display the object's properties in the displayArea
               // working details list
-                 document.getElementById("details").innerHTML  = "<h2 class='"+selectedObject.class+"'>"+selectedObject.name+"</h2>"+"<p>"+selectedObject.description+"</p><button class='done'>done</button><button class='next'>next</button><button class='later'>later</button><button class='open'>open</button>";
+                 document.getElementById("details").innerHTML  = "<h3>Experience<div class='container'> <span class='lvl'>Level: 2<div class='skills exp'>"+selectedObject.exp+"%</div></div>"+"<h2 class='"+selectedObject.class+"'>"+selectedObject.name+"</h2>"+"<p>"+selectedObject.description+"</p><button class='done'>done</button><button class='next'>next</button><button class='later'>later</button><button class='open'>open</button>";
+exp.style.width = width + "%";width+50;
             }
             
             //console.log(selectedObject);
@@ -164,11 +166,10 @@ if (myObj.aquests) {
 document.getElementById("quest").innerHTML = x;
 
 /*working quest list*/
-document.getElementById("log").innerHTML =  "<button id = 'new' class='new'>new </button>"+"<button class='sort'>sort</button>"+"<h2>Quests</h2>" +o;
+document.getElementById("log").innerHTML =  "<button id = 'new' class='new' onclick='myInput()'>new </button>"+"<button class='sort'>sort</button>"+"<h2>Quests</h2>" +o;
 document.getElementById("details").innerHTML = "<h2>Details</h2>" +"<string>"+b+"</string>";
 
-/* document.getElementById("log").onclick = function() {
-  apples()
+/* <button onclick='myInput()'>Try it</button>
 }; */
 
 function apples() { //change details on click
@@ -231,3 +232,10 @@ console.log(myObj.aquests.findIndex(lemon));
 
     
 });  
+
+/* Hide gamified */
+
+function myInput() {
+  var x = document.getElementById("myText").value;
+  document.getElementById("log").innerHTML =  "<button id = 'new' class='new' onclick='myInput()'>new </button>"+"<button class='sort'>sort</button>"+"<h2>Quests</h2>" +o+"<h3 class='open'>"+x+"</h3>";
+}
