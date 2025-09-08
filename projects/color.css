@@ -68,7 +68,7 @@ h3.active {
 }
 
 
-h3.done {
+h3.done,li.done {
     background-color: #0cff8e !important;
 }
 /*
@@ -291,10 +291,21 @@ body {
   .step {
     padding: 5px;
     border-radius: 5px;
-    margin-left: 25px;
+    /*margin-left: 25px;
+    color: rgba(255, 80, 103, 0.055);*/
+    color:rgb(8, 2, 22);
     background-color: rgba(255, 80, 103, 0.055);
-    color: #ff093e;
+    /*background-color: #096bff;*/
+    border: 1px solid #9b9494;
+    border-radius: 5px;
+    font-weight: 700;
+
+
   }
+
+  li::marker {
+  color: rgb(33, 22, 190);
+}
 
   #container {
    display: flex; 
@@ -373,4 +384,58 @@ h3.done2 {
 button {
     padding-right: 10px;
     margin-right: 10px;
+}
+
+/*Progress bars */
+/* Make sure that padding behaves as expected */
+* {box-sizing:border-box;
+}
+
+/* Container for skill bars */
+.container {
+  width: 95%; /* Full width */
+  background-color: #ebebeb; /* Grey background */
+  border: 1px solid #312d2d;
+  border-radius: 5px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.skills {
+  text-align: left; /* Right-align text */
+  padding-top: 5px; /* Add top padding */
+  padding-bottom: 5px; /* Add bottom padding */
+  color: rgb(0, 0, 0); /* White text color */
+  padding-left: 20px;    
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1.5px solid #312d2d;
+}
+
+.html {width: 90%; background-color: #08be5a;} /* Green */
+.mp {width: 80%; background-color: #2152f3;} /* Blue */
+.hp {width: 80%; background-color: #ff1749;} /* Red */
+.exp {width: 20%; background-color: #ffd904;} /* Dark Grey */
+
+.lvl {
+    color:black;
+    font-size:medium;
+    padding-left: 12px;
+}
+
+input[type=text] {
+  border: 2px solid rgb(96, 136, 223);
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+ background-color: rgba(255, 80, 103, 0.055);
+ font-size:medium;
+
+ background-image: url('/projects/quest/image/24/folder.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 45px;
 }
