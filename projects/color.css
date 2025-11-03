@@ -41,7 +41,7 @@ button, h3 {
 }
 
 .flex > div { /*left area*/
-  background-color: #fff8ff;
+  background-color: #fffdff;
   padding: 20px;
   border-radius: 8px;
   margin: 20px 20px;
@@ -234,6 +234,47 @@ h3.doing:before{
     no-repeat;
 }
 
+.backb:before{
+    display: inline-flex;
+    content: "";
+    width: 30px;
+    height: 25px;
+    padding-inline: 2px;
+    padding: auto;
+    background: transparent 
+    url('./quest/image/24/left-arrow.png') 
+    no-repeat;
+ 
+}
+
+.nextb:before{
+    display: inline-flex;
+    content: "";
+    width: 30px;
+    height: 25px;
+    padding-inline: 2px;
+    padding: auto;
+    background: transparent 
+    url('./quest/image/24/right-arrow.png') 
+    no-repeat;
+    
+}
+
+.backb{
+  background-color:#5078fc;
+  color: white;
+   font-weight: 700;
+  letter-spacing: 0.15ch;
+}
+
+.nextb{
+  background-color:#5078fc;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.15ch;
+}
+
+
 h4 {
     color: #1ec03f;
 }
@@ -288,7 +329,7 @@ body {
     font-weight: bold;
   }
 
-  .step {
+  .step , .log{
     padding: 5px;
     border-radius: 5px;
     /*margin-left: 25px;

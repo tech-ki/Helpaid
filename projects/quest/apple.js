@@ -6,7 +6,7 @@ let o = "";
         { id: 0, class: "done2", exp: 20 ,name: "Create a To Do", description: ["Make this Quest , To Do app work!"
           ,"<h2 class='done2'>Steps</h2><ol><li class='step done'>Create 2 panels </li><li class='step done'>Generate list from array </li><li class='step done'>Add class icons </li><li class='step done2 done'>On click show details loop </li></li><li class='step'>Add class icons </li><li class='step '>Add class icons </li><li class='step '>Add class icons </li></ol><h2 class='open'>Stones </h2><ul><li class='step done'>Add steps </li><li class='step later'>Make Change class buttons work with js </li><li class='step later'>Create new quest button </li><li class='step later'>Sort and filter quests button </li></ul><h2 class='done2'>Rewards </h2><p>+50 experience"] },
         { id: 1,  class: "done", exp: 20 , name: "Item A", description: "Description for Item A" },
-        { id: 2,  class: "open", name: "Item B", description: "Description for Item B" },
+        { id: 2,  class: "open", name: "Item B", description: "Description for Item B", steps:["Apples","Oranges","Oranges","Open Fl Studio"] },
         { id: 3,  class: "next", name: "Item C", description: "Description for Item C" },
         { id: 4,  class: "open", name: "Item D", description: "Description for Item C" },
         { id: 5, class: "open", name: "Roger's Apple", description:[
@@ -18,24 +18,39 @@ let o = "";
       "<br><br> End"]},
         { id: 6,  class: "open", name: "Learning Javascript", description: "Description for Item C" },
         { id: 7,  class: "next", name: "Get Element Id", description: "<h3>Javascript </h3> Describe when to use Get Element By Id. <ul>When will class be better?</ul>"},
-        { id: 8,  class: "later", name: "Dentist Appointment", description: "Description for Item C" }
+        { id: 8,  class: "later", name: "Dentist Appointment", description: "Schedule your next dentist appoint. Repeat Yearly." }
         ,
         { id: 9,  class: "open", name: "Item 9", description: "Description for Item C" }
         ,
         { id: 10,  class: "open", name: "Book Template", project: ["Item 10","apple"],description: "Today, there is a growing expectation for student research. Students like you are often trained and required, as part of the university curricula, to conduct research and write papers or theses that meet the professional standards of the discipline. A good reason behind this trend is that research skills are increasingly expected in the workplace worldwide. Doing empirical research enables you to acquire many valuable skills.<br><br> It requires you to raise appropriate questions; assess existing information; set goals and make plans to meet the goals; collect, analyze, and interpret data; and use data in a meaningful and appropriate way. The process requires systematic project management skills to allocate time, resources, and handle unexpected problems. <br><br> Your research experiences will provide you with rich, in-depth learning, which many of your future employers will highly value. With advances in technology you have greater access to the tools of field research and to a broader population whom you can engage in your research. The continuing efforts of colleges and universities to establish networks with professional and local communities are increasing opportunities for your learning experiences in the real world." },
+         { id: 11,  class: "open", name: "Dictionary", description: "Make a Dictionary", steps:["Apples","Oranges","Oranges","Open Fl Studio"]  }
+        ,
     ];
 
     const container = document.getElementById('log');
     const displayArea = document.getElementById('displayArea');
+   // const selectedObjects = dataArray.find(item => item.id === itemId); 
     //document.getElementById("displayArea").innerHTML = "hello";
 
+  //loop through items in an array
+  /**
+   * description: {steps:["Apples","Oranges"]} }
+   * 
+   * myObj.cars = dataArray
+   */
+  
+  //steps
+  for (let i in dataArray) {
+  for (let j in dataArray[i].description.steps) {
+    m += "<li class='step open'>"+dataArray[i].description.steps[j] + "</li>";
+  }
+}
 
     //working quests list
     for (let i in dataArray) {
       let g = i;
     o += "<h3 data-id="+g+" class='"+dataArray[i].class+"'>" + dataArray[i].name+"</h3>";
 }
-
 
 
 //show all dataArray , quest names
@@ -49,17 +64,49 @@ let o = "";
           
             // Get the ID from the data attribute
             const selectedObject = dataArray.find(item => item.id === itemId); 
-          
+          const myElement = document.querySelector("#example");
+                 const contents = myElement.innerHTML;
+                 
+s = "next steps";
+
+for (let a in selectedObject.steps) {
+  s+= "<li class='step open'>"+selectedObject.steps[a];
+}
+
             // Find the object
             if (selectedObject) {
-          
               // Display the object's properties in the displayArea
+
               // working details list
-                 document.getElementById("details").innerHTML  = "<h3>Experience<div class='container'> <span class='lvl'>Level: 2<div class='skills exp'>"+selectedObject.exp+"%</div></div>"+"<h2 class='"+selectedObject.class+"'>"+selectedObject.name+"</h2>"+"<p>"+selectedObject.description+"</p><button class='done'>done</button><button class='next'>next</button><button class='later'>later</button><button class='open'>open</button>";
+                 document.getElementById("details").innerHTML  = "<h3><div class='container'> <span class='lvl'>Level: 2<div class='skills exp'>"+selectedObject.exp+"%</div></div>"+"<h2 class='"+selectedObject.class+"'>"+selectedObject.name+"</h2>"+"<p>"+selectedObject.description+"<h2 class='done2'>Steps</h2><ol><li class='step next'>"+s+"</li class='open'>"+"</ol><button class='done'>done</button><button class='next'>next</button><button class='later'>later</button><button class='open'>open</button><button class='backb'>back</button><button class='nextb'>next</button>"; 
+                 
+
+
+                 
 exp.style.width = width + "%";width+50;
             }
-            
+
             //console.log(selectedObject);
+
+/**
+ * 
+ *   //steps
+  for (let i in dataArray) {
+  for (let j in dataArray[i].description.steps) {
+    o += "<ol class='step open'>"+dataArray[i].description.steps[j] + "</ol>";
+  }
+}  
+  
+//steps
+  for (let i in dataArray) {
+  for (let j in dataArray[i].description.steps) {
+    o += "<ol class='step open'>"+dataArray[i].description.steps[j] + "</ol>";
+  }
+}
+ * 
+ */
+
+            
         }
     });
 
@@ -167,7 +214,11 @@ document.getElementById("quest").innerHTML = x;
 
 /*working quest list*/
 document.getElementById("log").innerHTML =  "<button id = 'new' class='new' onclick='myInput()'>new </button>"+"<button class='sort'>sort</button>"+"<h2>Quests</h2>" +o;
-document.getElementById("details").innerHTML = "<h2>Details</h2>" +"<string>"+b+"</string>";
+
+/*+"<h2>Steps</h2>" +m;*/
+
+/**Starting Details */
+document.getElementById("details").innerHTML = "<h2>Details</h2>" +"<string>"+b+"</string>"; 
 
 /* <button onclick='myInput()'>Try it</button>
 }; */
@@ -239,3 +290,5 @@ function myInput() {
   var x = document.getElementById("myText").value;
   document.getElementById("log").innerHTML =  "<button id = 'new' class='new' onclick='myInput()'>new </button>"+"<button class='sort'>sort</button>"+"<h2>Quests</h2>" +o+"<h3 class='open'>"+x+"</h3>";
 }
+
+
