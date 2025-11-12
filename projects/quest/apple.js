@@ -6,7 +6,7 @@ let o = "";
         { id: 0, class: "done2", exp: 20 ,name: "Create a To Do", description: ["Make this Quest , To Do app work!"
           ,"<h2 class='done2'>Steps</h2><ol><li class='step done'>Create 2 panels </li><li class='step done'>Generate list from array </li><li class='step done'>Add class icons </li><li class='step done2 done'>On click show details loop </li></li><li class='step'>Add class icons </li><li class='step '>Add class icons </li><li class='step '>Add class icons </li></ol><h2 class='open'>Stones </h2><ul><li class='step done'>Add steps </li><li class='step later'>Make Change class buttons work with js </li><li class='step later'>Create new quest button </li><li class='step later'>Sort and filter quests button </li></ul><h2 class='done2'>Rewards </h2><p>+50 experience"] },
         { id: 1,  class: "done", exp: 20 , name: "Item A", description: "Description for Item A" },
-        { id: 2,  class: "open", name: "Item B", description: "Description for Item B", steps:["Apples","Oranges","Oranges","Open Fl Studio"] },
+        { id: 2,  class: "open", name: "FL Studio", description: "Description for Item B", steps:["Open Fl Studio"], stones:["Play in Piano Roll", "Learn a new Music Term"] },
         { id: 3,  class: "next", name: "Item C", description: "Description for Item C" },
         { id: 4,  class: "open", name: "Item D", description: "Description for Item C" },
         { id: 5, class: "open", name: "Roger's Apple", description:[
@@ -15,10 +15,10 @@ let o = "";
       "<br><br> So ... Let's do this for fun! Abacadabra!",
       "<br><br> Surprised?! If your <b>HP</b> reahes 0, then you are in trouble. Now I will give you Roger's Apple. Please take it. Open the item window and press 'I' to consume.",
       "<br><br> Please talk to me again after your HP is 100%.",
-      "<br><br> End"]},
-        { id: 6,  class: "open", name: "Learning Javascript", description: "Description for Item C" },
-        { id: 7,  class: "next", name: "Get Element Id", description: "<h3>Javascript </h3> Describe when to use Get Element By Id. <ul>When will class be better?</ul>"},
-        { id: 8,  class: "later", name: "Dentist Appointment", description: "Schedule your next dentist appoint. Repeat Yearly." }
+      "<br><br> End"],stones: ["have next button work", "have back button work"]},
+        { id: 6,  class: "open", name: "Learning Javascript", description: "Description for Item C", steps:["Watch 1 Udemy Video"], stones:["Add steps","Make class change when clicking button","Connect to SQLite using python or javascript","Create new quest button"] },
+        { id: 7,  class: "next", name: "Get Element Id", description: "Describe when to use Get Element By Id. When will class be better?"},
+        { id: 8,  class: "done", name: "Dentist Appointment", description: "Schedule your next dentist appointment. Repeat Yearly.", steps:["Call Dentist to Schedule an Appointment","Go to an appointment"],stones:["Request Q next time", "Request cavity cleaning"]}
         ,
         { id: 9,  class: "open", name: "Item 9", description: "Description for Item C" }
         ,
@@ -67,10 +67,16 @@ let o = "";
           const myElement = document.querySelector("#example");
                  const contents = myElement.innerHTML;
                  
-s = "next steps";
+s = "<h2 class='done2'>Steps</h2><ol>Steps to make progress<br><br>";
+
+t = "<h2 class='done2'>Stones</h2><ul>A List of assorted items to pursue<br><br>";
 
 for (let a in selectedObject.steps) {
   s+= "<li class='step open'>"+selectedObject.steps[a];
+}
+
+for (let g in selectedObject.stones) {
+  t+= "<li class='step later'>"+selectedObject.stones[g];
 }
 
             // Find the object
@@ -78,7 +84,7 @@ for (let a in selectedObject.steps) {
               // Display the object's properties in the displayArea
 
               // working details list
-                 document.getElementById("details").innerHTML  = "<h3><div class='container'> <span class='lvl'>Level: 2<div class='skills exp'>"+selectedObject.exp+"%</div></div>"+"<h2 class='"+selectedObject.class+"'>"+selectedObject.name+"</h2>"+"<p>"+selectedObject.description+"<h2 class='done2'>Steps</h2><ol><li class='step next'>"+s+"</li class='open'>"+"</ol><button class='done'>done</button><button class='next'>next</button><button class='later'>later</button><button class='open'>open</button><button class='backb'>back</button><button class='nextb'>next</button>"; 
+                 document.getElementById("details").innerHTML  = "<h3><div class='container'> <span class='lvl'>Level: 2<div class='skills exp'>"+selectedObject.exp+"%</div></div>"+"<h2 class='"+selectedObject.class+"'>"+selectedObject.name+"</h2>"+"<p>"+selectedObject.description+s+"</li></ol>"+t+"</li class='open'>"+"</ol><button class='done'>done</button><button class='next'>next</button><button class='later'>later</button><button class='open'>open</button><button class='backb'>back</button><button class='nextb'>next</button>"; 
                  
 
 
