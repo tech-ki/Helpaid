@@ -6,8 +6,20 @@ code,.w3-code, .w3-codespan{
 color: #2367f9;
 }
 
-strong,b,h2 {
+strong,b {
     color: #2367f9;
+}
+h2 {
+    color:#fff8f8;
+    background-color: #fc3a51;
+    padding-left: 10px;
+    padding-top: 3px;
+    border-radius: 8px;
+    padding-bottom: 4px;
+     border-style:ridge;
+    border-color: #1a0d78;
+    text-shadow: #000000 2px 2px ;
+    font-size: 22px;
 }
 
 h1,em {
@@ -15,13 +27,27 @@ h1,em {
 }
 
 button, h3 {
-    color: #4f28fd;
+    /*color: #4f28fd;*/
+    color:#565151;
     background-color: #f1e2f0;
     padding-left: 10px;
     padding-top: 3px;
     border-radius: 8px;
     padding-bottom: 4px;
-   
+     border-style:ridge;
+    border-color: #1a0d78;   
+}
+
+ li {
+    background-color: #f4edf4;
+    padding-left: 10px;
+    padding-top: 3px;
+    border-radius: 8px;
+    padding-bottom: 4px;
+    border: rgb(180, 154, 154);
+    border-width:1px;   
+    border-style:double;
+    color: #4c5369;
 }
 
 /*button {
@@ -38,14 +64,18 @@ button, h3 {
   display: flex; 
   background-color: DodgerBlue;
   border-radius: 8px;
+  height:850px;
 }
 
 .flex > div { /*left area*/
-  background-color: #fffdff;
+  background-color: #fefcfe;
   padding: 20px;
   border-radius: 8px;
   margin: 20px 20px;
   width: 300px;
+  height:800px;
+  overflow: auto;
+  margin-bottom: 200px;
 }
 
 .flex > div > p {
@@ -57,38 +87,92 @@ button, h3 {
     padding-left: 20px;
 }
 
-h3.active {
-    background-color: #ffef0cce !important;
-    border: #21242c solid;
-    border-width: 2px;
+h3.active  {
+    /*background-color: #fe0123ce !important;*/
+    border: #000000 solid !important;
+    border-width: 5px !important;
 }
 
 .flex > div > h3 {
-    background-color: #eedfe2;
+    /*background-color: #e2e0e0;*/
+    color: #faf9fc;
+   background-color: rgb(12, 153, 247) !important;
+    /*background-color: rgb(227, 232, 235) !important;*/
+    border-width: 2px;
+    text-shadow: #000000 1px 1px;
+    
+    }
+
+.flex > div > h1 {
+    /*background-color: #e2e0e0;*/
+    /*color: #857a97;*/
+    color:rgb(42, 70, 255);
 }
 
+a {
+  background-color: aquamarine;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+   border-radius: 8px; /*curves*/
+   padding-bottom: 2px;
+   color:#2152f3;
+}
 
-h3.done,li.done {
+h3.later,li.later {
+    background-color: #c3c4d3;       
+    /*background-color: #c6c5c5 !important;*/
+    color:#585757;
+    border-width: 2px;   
+}
+
+h3.close,li.close {
+    background-color: #5b5757 !important;       
+    /*background-color: #c6c5c5 !important;*/
+    color:#6e6d6d;
+    text-shadow: #000000 1px 1px ;
+    border-width: 2px;   
+    color:#ffffff;
+}
+
+h3.done {
+    background-color: #05b350 !important;
+    text-shadow: #000000 1px 1px ;
+    border-width: 2px;   
+    color:#ffffff;
+}
+
+li.done {
     background-color: #0cff8e !important;
 }
-/*
+
 h3.next {
-    background-color: #ff0cc28f !important;
+   /* background-color: hsla(46, 97%, 53%, 0.78) !important;*/
+     background-color: #fa0473 !important;
+    text-shadow: #000000 1px 1px ;
+    border-width: 2px;   
+    color:#ffffff;
+}
+
+li.next {
+   /* background-color: hsla(46, 97%, 53%, 0.78) !important;*/
+     background-color: #f9a9cd !important;
+    border-width: 2px;   
 }
 
 h3.open {
-    background-color: #0cefff69 !important;
-} */
+     color:rgb(255, 255, 255);
+    background-color: rgb(13, 157, 253);
+     text-shadow: #000000 2px 2px ;
+} 
 
 #log {
     border: #060e1f;
     border-style: solid;
-    width: 300px;
+    width: 400px; /*left side*/
 }
 
 #details {
-    
-    width: 400px;
     border: #060e1f;
     border-style: solid;
     width: 500px;
@@ -140,13 +224,15 @@ h3.open {
 }
 
 
-h3.doing:before{
+.close:before{
     display: inline-flex;
     content: "";
-    width: 30px;
-    height: 25px;
+    width:24px;
+    height: 24px;
+    padding-inline: 4px;
+    padding: auto;
     background: transparent 
-    url('./quest/image/24/006-processing-time.png') 
+    url('./quest/image/24/cancel.png')
     no-repeat;
 }
 
@@ -158,7 +244,7 @@ h3.doing:before{
     padding-inline: 2px;
     padding: auto;
     background: transparent 
-    url('./quest/image/24/001-schedule.png') 
+    url('./quest/image/24/next.png') 
     no-repeat;
 }
 
@@ -352,12 +438,12 @@ body {
    display: flex; 
    position: relative;
    padding-left: 20px;
-   padding-right: 20px;
+   padding-right: 10px;
    padding-top: 10px;
    padding-bottom: 10px;
     display: grid; 
    justify-items: center;
-  }
+  } 
 
    #main {
     /*min-width: 500px;*/
@@ -411,10 +497,13 @@ body {
   cursor: pointer;
 }
 
-h3.done2 {
- background-color: #ffdb0cce !important;    
-  /* background-color: #ffdb0cce !important;    */
-  border: #060e1f 2px solid;
+h3.done2,li.done2 {
+  /* background-color: #ffdb0cce !important;    
+    background-color: #2e54d0 !important;*/
+    background-color: #05b350 !important;
+    text-shadow: #000000 1px 1px ;
+    border-width: 2px;   
+    color:#ffffff;
 }
 
 .do {

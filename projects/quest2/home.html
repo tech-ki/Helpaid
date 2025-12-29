@@ -2,33 +2,340 @@
     <head>
         <link rel="stylesheet" type="text/css" href="../color.css">    
     </head>
+    <style>
+.content {
+  padding: 0 18px;
+  display: none;
+ overflow: auto;
+ /*background-color: #f1f1f1;*/
+}
+
+
+
+</style>
     <body>
         <div id="container"> <!--all open-->
         <div id="main"> <!--all open-->
             <h1> Quests! </h1>
-            <h2>Quest Available</h2>
 
-            <h3 class="later">Later / Scheduled</h3>
-            <h3 class="done">Done</h3>
-            <h3 class="open">Open</h3>
-            <h3 class="next">Next or Doing</h3>
-            <h3 class="done2"> Project</h3>
             <h3 class="next">Name: Kia  </h3>
-             <input type="text" id="myText" value="input">
+             <input type="text" id="myText" value="input"> 
 
 <div class="flex"> <!--Blue-->
   <div style="flex-grow: 1" id = "log"> <!--1-->
-    <h2>Quest</h2>
-    <h3 class="open">Roger's Apple</h3>
+    <h1>Quests</h1>
+
+         <h3 class="next collapsible">Health</h3>
+     <div class="content">
+     <h3 class="next">Do 10 minutes of Yoga</h3>
+      <h3 class="next">Set up a Doctors Appointment</h3>
+      <h3 class="next">Stretch your tight muscles</h3>
+      <h3 class="later">Set up a Vision Appointment</h3>
+      </div>
+
+       <h3 class="open collapsible">Home</h3>
+     <div class="content">
+       <h3 class="done">Clean Room</h3>
+       <h3 class="open">Clean Outer Storage</h3>
+      <h3 class="open">Clean Grandma's Storage</h3>
+      </div>
+
+      
+
+      <h3 class="open collapsible">Monies</h3>
+     <div class="content">
+     <h3 class="later">Ask for a raise</h3>
+     <h3 class="later">Apply for remote job</h3>
+     <h3 class="later">Register a business</h3>
+     <h3 class="later">Add $500 to 401K</h3>
+     <h3 class="later">Pay off interest off (1) student loans</h3>
+      </div>
+
+       <h3 class="open collapsible">Code</h3>
+     <div class="content">
+   <h3 class="next active">1st Django Project</h3>
+   <h3 class="next">Helpaid</h3>
+   <h3 class="later">Create a node by node graph diagram</h3>
+      <h3 class="open">GoDot Limeaid</h3>
+   <h3 class="open">GoDot Skill Tree</h3>
+
+      </div>
+
+      <h3 class="later collapsible">Art</h3>
+     <div class="content">
+     <h3 class="later">Do 1 section of 21Draw</h3>
+      <h3 class="later">Animate a pixel character walk cycle</h3>
+       <h3 class="later">Blender Animation</h3>
+      </div>
+
+       <h3 class="later collapsible">Music</h3>
+     <div class="content">
+      <h3 class="next">Listen to a song</h3>
+      <h3 class="later">Sing a song</h3>
+      <h3 class="later">Produce a voice memo</h3>
+      <h3 class="later">FL Studio Production</h3>
+      <h3 class="later">Sing an old song</h3>
+       <h3 class="later">Play a song on violin</h3>
+       <h3 class="later">Play a song on piano</h3>
+       <h3 class="next">Perform on a stage with a group</h3>
+       <h3 class="later">Play in front of people</h3>
+       <h3 class="later">Sing in front of people</h3>
+       <h3 class="later">Find a water sound</h3>
+       <h3 class="later">Try an open mic</h3>
+       <li>Set up social media</li>
+       <li>Reach out to venue for a gig</li>
+       <li>Perform 1st gig</li>
+       <li>link https://youtu.be/fev6O2GxC-g?si=idWfIEc6Z-w3LyEG</li>
+       <li> link solo gig https://youtu.be/52jB6_6VO4s?si=xLbeESBFRWyIvntV</li>
+       <li>Reach out</li>
+       <li>Send emails</li>
+       <li>Chat on phone</li>
+       <li>Chat at cafe's or open dining areas</li>
+      </div>
+
+      <h3 class="later collapsible">Social</h3>
+     <div class="content">
+     <h3 class="next">Call Micheal</h3>
+      <h3 class="later">Call Phylicia</h3>
+      <h3 class="open">Call Grandma</h3>
+       <h3 class="next">Call Aunt Debb</h3>
+       <h3 class="later">Visit Aunt Debb</h3>
+      </div>
+
+      <h3 class="later collapsible">Travel</h3>
+     <div class="content">
+             <h3 class="next">Buy a car</h3>
+            <h3 class="later">Go to strawberry patch</h3>
+            <h3 class="later">Go to park</h3>
+             <h3 class="later">Go to museum</h3>
+             <h3 class="later">Go to Six Flags</h3>
+             <h3 class="later">Go to Grand Canyon</h3>
+             <h3 class="later">Go to Europe for Architecture</h3>
+             <h3 class="later">Go Scuba Diving</h3>
+             <h3 class="later">Go to underwater Canyon</h3>
+           <h3 class="later">Travel to Hawaii</h3>
+      </div>
+
+      <h3 class="done2 collapsible">Unsorted Quests</h3>
+     <div class="content">
+    <h3 class="done2">Roger's Apple</h3>
+       <h3 class="later">Play Diner Dash</h3>
+       <h3 class="later">Play in Linux</h3>
+       <h3 class="later">Rent an Apartment with baby</h3>
+       <h3 class="later">Get Married</h3>
+       </div>
   </div>
 
   <div style="flex-grow: 2" id = "details"> <!--1-->
-    <h3 class="open">Roger's Apple</h3>
-    <li>Apple</li>
-    <ol>One</ol>
-  </div>
-</div>
+    <h2 class="next collapsible"> 1st Django Project</h2>
+    <div class="content">
+    <span>Create a project that uses web framework django & DBMS SQLite   <a href="https://www.w3schools.com/django/django_templates.php">link</a> </span>
 
+    <h3 class="done2 collapsible">Create Django Venv</h3>
+     <div class="content">
+        <span>First setup the environment Django will live in. Then create your project.</span>
+    <ol>
+      <li class="done">Go to venv (Use cd to move to folder)</li>
+      <li class="done">Activate venv (myworld)</li>
+      <li class="done">Check django version</li>
+      <li class="done">Create django project (my_tennis_world)</li>
+      <li class="done">Go to project & Run Server</li>
+    </ol>
+    <br>
+    </div>
+    <h3 class="done collapsible">Create Hello World app</h3>
+     <div class="content">
+        <span>An application is similar to a webpage. For example Home or Shopping page.</span>
+      <ol>
+        <li class="done">Create an app (page) called <b>members</b></li>
+        <li class="done">Add things to members/views.py</li>
+        <li class="done">Create & Add things to members/url.py</li>
+        <li class="done">Go to main/urls and Add things</li>
+        <li class="done">Run server at members.url</li>
+      </ol>
+      <br>
+      </div>
+      <h3 class="next collapsible">Create Template</h3>
+       <div class="content">
+          <span>Now let's create a template we can use to organize these webpages.</span>
+      <ol>
+        <li class="next">items</li>
+        <li class="open">items</li>
+        <li class="open">items</li>
+    </ol>
+    <br>
+    </div>
+    <h3 class="close collapsible">Create Models</h3>
+     <div class="content">
+          <span>Now let's create a template we can use to organize these webpages.</span>
+      <ol>
+        <li class="done">items</li>
+        <li class="done">items</li>
+        <li class="done">items</li>
+    </ol>
+    <br>
+    </div>
+    <h3 class="close collapsible"> Insert Data</h3>
+     <div class="content">
+          <span>Now let's create a template we can use to organize these webpages.</span>
+      <ol>
+        <li class="done">items</li>
+        <li class="done">items</li>
+        <li class="done">items</li>
+    </ol>
+    <br>
+    </div>
+    <h3 class="close collapsible">Update Data</h3>
+     <div class="content">
+          <span>Now let's create a template we can use to organize these webpages.</span>
+      <ol>
+        <li class="done">items</li>
+        <li class="done">items</li>
+        <li class="done">items</li>
+    </ol>
+    <br>
+    </div>
+    <h3 class="close collapsible">Delete Data</h3>
+    <div class="content">
+          <span>Now let's create a template we can use to organize these webpages.</span>
+      <ol>
+        <li class="done">items</li>
+        <li class="done">items</li>
+        <li class="done">items</li>
+    </ol>
+    <br>
+</div>
+<h3 class="collapsible close">Update Model</h3>
+<div class="content">
+          <span>Now let's create a template we can use to organize these webpages.</span>
+      <ol>
+        <li class="done">items</li>
+        <li class="close">items</li>
+        <li class="done">items</li>
+    </ol>
+    <br>
+</div>
+<h3 class="later">Deploy with Server</h3>
+</div> <!--Project close-->
+
+
+    <h2 class="done2 collapsible" >Roger's Apple (Project)</h2>
+    <div class="content">
+    <span> Create a 3 tier system. <br>Project > Task > Steps / Stones (description) </span>
+     <h3 class="open collapsible">Task</h3>
+     <div class="content">
+     <span>Unsorted & unfiltered</span>
+      <ul>
+         <li class="done">Create a scrollbar for Details</li>
+          <li class="done">Play with baby</li>
+          <li class="done">Make tasks collapsible</li>
+          <li class="open">Create this using Django features</li>
+          <li class="later">Add li items to SQLlite</li>
+          </ul>
+          <h3 class="Open"> (Class) types:
+          </h3>
+          <ol>
+          <li class="Open">Open</li>
+           <li class="Close">Close (Until)</li>
+            <li class="Next">Next / Selected</li>
+             <li class="Later">Later</li>
+              <li class="Done">Done</li>
+               <li class="Done2">Done2</li>
+               <li class="Open"><a>Links</a></li>
+               </ol>
+
+    </ol>
+</div> 
+<!--Roger's Apple-->
+
+</div>
+ <h2 class="open collapsible"> Clean Room (Project)</h2>
+    <div class="content">
+    <span>Let's refreshen your room a bit</span>
+
+    <h3 class="open collapsible">Bedroom</h3>
+    <div class="content">
+        <span>First lets refresh the place you sleep in.</span>
+        <ol>
+        <li class="next">Remove clutter from bed</li>
+        <li class="open">Spread Bed</li>
+      </ol> Situational:
+      <ul>
+        <li class="later">Wash Sheets?</li>
+        <li class="later">Wash Comforter?</li>
+      </ul>
+        </div>
+
+        <h3 class="done collapsible">Bathroom</h3>
+     <div class="content">
+        <span>Next let's refresh where your cleanse and purge..</span>
+        <ol>
+        <li class="done">Clean sink</li>
+        <li class="done">Clean mirror</li>
+       <li class="done">Clean toilet</li>
+        <li class="done">Clean shower</li>
+        <li class="later">Clean floor</li>
+      </ol>
+        </div>
+
+        <h3 class="open collapsible">Laundry</h3>
+     <div class="content">
+        <span>Next let's refresh your clothes.</span>
+        Situational (pick 1):
+      <ul> 
+        <li class="later">Clean Whites</li>
+        <li class="later">Clean Darks</li>
+        <li class="later">Clean Colors</li>
+        <li class="next">Clean Monthlys</li>
+      </ul>
+      Clean loop:
+      <ol>
+        <li class="next">Put clothes in the washer</li>
+        <li class="close">Put clothes in the dryer</li>
+        <li class="close">Put clothes in carry bag</li>
+        <li class="close">Assort clothes into closet (storage)</li>
+      </ol>
+        </div>
+
+
+        <h3 class="next collapsible">Closet</h3>
+     <div class="content">
+        <span>Next let's refresh your clothes storage (inventory).</span>
+        <ol>
+          <li class="done">Gather your inventory.</li>
+          <li class="done">Put clothes on the floor into piles.</li>
+          <p>Categories:<p>
+          <ol>
+            <li>Pants</li>
+            <li>PJs</li>
+            <li>Shirts</li>
+            <li>Jackets</li>
+            <li>Bin</li>
+            <li>Purge (Goodwill)</li>
+            <li> Outer Storage</li>
+          </ol>
+          <li class="next">Place into areas by category</li>
+          <li class="open">Repeat every wash cycle,</li>
+        </ol>
+        </div>
+
+        <h3 class="done collapsible">Office</h3>
+     <div class="content">
+        <span>Next, lets refresh your working environment..</span>
+        <ol>
+          <li class="done">Clean off the desk.</li>
+          <li class="done">Trash the trash items</li>
+          <li class="open">Dust your electronics.</li>
+          <li class="open">Rearrange if you like.</li>
+        </ol>
+        </div>
+        
+  </div> 
+<!--White Footer-->
+</div> 
+  <!--Blue Footer-->
+</div> 
+<!--Grey footer-->
 
 <!-- List Quests by Array-->
 <p id="quest"></p>
@@ -45,6 +352,6 @@
 
 
 <!-- Then you can call it -->
-  <script src="./apple.js"></script>
+  <script src="./lemon.js"></script>
     </body>
 </html>
